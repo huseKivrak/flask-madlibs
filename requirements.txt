@@ -1,0 +1,6 @@
+flake8==6.0.0
+mccabe==0.7.0
+pycodestyle==2.10.0
+pyflakes==3.0.1
+Pygments==2.14.0
+six==1.16.0
