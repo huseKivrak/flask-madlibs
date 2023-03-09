@@ -13,12 +13,15 @@ debug = DebugToolbarExtension(app)
 def questions():
 
     return render_template("questions.html",
-                        # use silly_story
-                            inputs = silly_story.prompts
+                           inputs=silly_story.prompts
                            )
+
 
 @app.get('/results')
 def results():
 
-    results = request.args.get(input)
-    return render_template("results.html")
+    #     for (key, val) in answers.items():
+    #         text = text.replace("{" + key + "}", val)
+    generated_story = silly_story.generate(request.args)
+
+    return render_template("results.html", story_text = generated_story)
